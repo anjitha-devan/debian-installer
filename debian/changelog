@@ -1,0 +1,293 @@
+kolibri-source (0.10.0-0ubuntu2) trusty; urgency=medium
+
+  * Keep the upgrade note from displaying when irrelevant
+  * Silence confusing redundant script output during install
+
+ -- Benjamin Bach <benjamin@learningequality.org>  Thu, 05 Jul 2018 20:45:44 +0200
+
+kolibri-source (0.10.0-0ubuntu1) trusty; urgency=medium
+
+  * New stable upstream release
+
+ -- Benjamin Bach <benjamin@learningequality.org>  Thu, 05 Jul 2018 11:57:35 +0200
+
+kolibri-source (0.10.0~b10-0ubuntu1) trusty; urgency=medium
+
+  * New upstream release
+  * Changed URL upgrade note for changing system service owner
+
+ -- Benjamin Bach <benjamin@learningequality.org>  Tue, 03 Jul 2018 17:22:10 +0200
+
+kolibri-source (0.10.0~b9-0ubuntu2) trusty; urgency=medium
+
+  * Display a note for upgrades from <0.10
+
+ -- Benjamin Bach <benjamin@learningequality.org>  Mon, 02 Jul 2018 23:47:00 +0200
+
+kolibri-source (0.10.0~b9-0ubuntu1) trusty; urgency=medium
+
+  * New upstream release
+  * Upgrade notes for pre 0.0.10
+
+ -- Benjamin Bach <benjamin@learningequality.org>  Mon, 02 Jul 2018 22:01:37 +0200
+
+kolibri-source (0.10.0~b8-0ubuntu2) trusty; urgency=medium
+
+  * Only set defaults during install, not for upgrades
+
+ -- Benjamin Bach <benjamin@learningequality.org>  Fri, 29 Jun 2018 16:07:51 +0200
+
+kolibri-source (0.10.0~b8-0ubuntu1) trusty; urgency=medium
+
+  * New upstream release
+  * Use desktop user for system service and prompt through debconf
+  * Removed python3-distutils dependency
+
+ -- Benjamin Bach <benjamin@learningequality.org>  Fri, 29 Jun 2018 00:52:18 +0200
+
+kolibri-source (0.9.2-0ubuntu4) trusty; urgency=medium
+
+  * Fix KOLIBRI_LISTEN_PORT in /etc/kolibri/daemon.conf
+
+ -- Benjamin Bach <benjamin@learningequality.org>  Mon, 04 Jun 2018 16:36:42 +0200
+
+kolibri-source (0.9.2-0ubuntu3) trusty; urgency=medium
+
+  * Remove "Recommends: python3-distutils"
+
+ -- Benjamin Bach <benjamin@learningequality.org>  Fri, 18 May 2018 00:51:22 +0200
+
+kolibri-source (0.9.2-0ubuntu2) trusty; urgency=medium
+
+  * Fix python3-distutils dependency: It only exists in Ubuntu 18.04+
+
+ -- Benjamin Bach <benjamin@learningequality.org>  Thu, 17 May 2018 18:08:06 +0200
+
+kolibri-source (0.9.2-0ubuntu1) trusty; urgency=medium
+
+  * Kolibri 0.9.2 release
+  * Change python3-distutils to be a recommendation instead of a dependency
+  * Modify the patch rm-py2only.diff depending on the files changed in futures module
+
+ -- Lingyi Wang <lingyi@learningequality.org>  Wed, 16 May 2018 22:18:29 +0000
+
+kolibri-source (0.9.1-0ubuntu2) trusty; urgency=medium
+
+  * Add python3-distutils dependency
+
+ -- Benjamin Bach <benjamin@learningequality.org>  Fri, 11 May 2018 18:32:47 +0200
+
+kolibri-source (0.9.1-0ubuntu1) trusty; urgency=medium
+
+  * New upstream release
+
+ -- Lingyi Wang <lingyi@learningequality.org>  Fri, 20 Apr 2018 20:53:09 +0000
+
+kolibri-source (0.9.0-0ubuntu3) trusty; urgency=medium
+
+  * Add Python 3.6 support
+
+ -- Lingyi Wang <lingyi@learningequality.org>  Wed, 11 Apr 2018 20:51:22 +0000
+
+kolibri-source (0.9.0-0ubuntu2) trusty; urgency=medium
+
+  * Fix the error that Kolibri directories cannot be removed completely
+
+ -- Lingyi Wang <lingyi@learningequality.org>  Mon, 09 Apr 2018 16:13:56 +0000
+
+kolibri-source (0.9.0-0ubuntu1) trusty; urgency=medium
+
+  * New upstream release
+
+ -- Lingyi Wang <lingyi@learningequality.org>  Thu, 29 Mar 2018 19:11:02 +0000
+
+kolibri-source (0.9.0~b2-0ubuntu1) trusty; urgency=medium
+
+  * New upstream release
+
+ -- Benjamin Bach <benjamin@learningequality.org>  Mon, 26 Mar 2018 22:58:11 +0200
+
+kolibri-source (0.8.0-0ubuntu1) trusty; urgency=medium
+
+  * Final 0.8.0 release
+  * Added patch for dbbackup crash when upgrading with "~" in KOLIBRI_HOME
+
+ -- Benjamin Bach <benjamin@learningequality.org>  Mon, 19 Mar 2018 19:00:28 +0100
+
+kolibri-source (0.8.0~b4-0ubuntu2) trusty; urgency=medium
+
+  * Fix attempt for replacing * with 0 in parse_version compat
+
+ -- Benjamin Bach <benjamin@learningequality.org>  Thu, 15 Mar 2018 00:31:11 +0100
+
+kolibri-source (0.8.0~b4-0ubuntu1) trusty; urgency=medium
+
+  * New upstream release
+
+ -- Benjamin Bach <benjamin@learningequality.org>  Wed, 14 Mar 2018 19:30:18 +0100
+
+kolibri-source (0.8.0~b3-0ubuntu1) trusty; urgency=medium
+
+  * New upstream beta
+
+ -- Benjamin Bach <benjamin@learningequality.org>  Tue, 13 Mar 2018 18:57:18 +0100
+
+kolibri-source (0.7.2-0ubuntu3) trusty; urgency=medium
+
+  * Fix environment preservation inside system service for Ubuntu 14.04
+
+ -- Benjamin Bach <benjamin@learningequality.org>  Fri, 02 Mar 2018 13:36:17 +0100
+
+kolibri-source (0.7.2-0ubuntu2) trusty; urgency=medium
+
+  * Make python3-cryptography a RECOMMENDED dependency #11
+  * Add startup service export statements for Ubuntu 14.04 #16
+
+ -- Benjamin Bach <benjamin@learningequality.org>  Thu, 01 Mar 2018 18:15:43 +0100
+
+kolibri-source (0.7.2-0ubuntu1) trusty; urgency=medium
+
+  * New upstream release
+  * Remove KOLIBRI_HOME from /etc/default/kolibri #16
+
+ -- Benjamin Bach <benjamin@learningequality.org>  Tue, 27 Feb 2018 18:24:23 +0100
+
+kolibri-source (0.7.1-0ubuntu2) trusty; urgency=medium
+
+  * Further Py3 support patches for source dist built on Python 2
+
+ -- Benjamin Bach <benjamin@learningequality.org>  Mon, 05 Feb 2018 16:44:02 +0100
+
+kolibri-source (0.7.1-0ubuntu1) trusty; urgency=medium
+
+  * New upstream release
+  * Update quilt patches for Python 2 build
+
+ -- Benjamin Bach <benjamin@learningequality.org>  Fri, 02 Feb 2018 16:37:57 +0100
+
+kolibri-source (0.7.1~b1.dev0+git.13.gf1d43ed-0ubuntu2) trusty; urgency=medium
+
+  * Quilt patches for removing Python 2 syntax
+
+ -- Benjamin Bach <benjamin@learningequality.org>  Fri, 02 Feb 2018 14:48:55 +0100
+
+kolibri-source (0.7.1~b1.dev0+git.13.gf1d43ed-0ubuntu1) trusty; urgency=medium
+
+  * New upstream release
+
+ -- Benjamin Bach <benjamin@learningequality.org>  Fri, 02 Feb 2018 02:49:25 +0100
+
+kolibri-source (0.7.1~b1.dev0+git.12.g2a8fe31-0ubuntu1) trusty; urgency=medium
+
+  * New upstream release
+
+ -- Benjamin Bach <benjamin@learningequality.org>  Fri, 02 Feb 2018 00:10:47 +0100
+
+kolibri-source (0.7.1~b1.dev0+git.10.gb0f4ff4-0ubuntu1) trusty; urgency=medium
+
+  * New upstream release
+
+ -- Benjamin Bach <benjamin@learningequality.org>  Thu, 01 Feb 2018 00:27:18 +0100
+
+kolibri-source (0.7.1~b1-0ubuntu1) trusty; urgency=medium
+
+  * New upstream release
+
+ -- Benjamin Bach <benjamin@learningequality.org>  Sun, 28 Jan 2018 23:02:20 +0100
+
+kolibri-source (0.7.0-0ubuntu1) xenial; urgency=medium
+
+  * New upstream release
+
+ -- Benjamin Bach <benjamin@learningequality.org>  Mon, 11 Dec 2017 17:34:50 +0100
+
+kolibri-source (0.7.0~beta5-0ubuntu1) xenial; urgency=medium
+
+  * New upstream release
+
+ -- Benjamin Bach <benjamin@learningequality.org>  Mon, 04 Dec 2017 16:27:05 +0100
+
+kolibri-source (0.6.0-0ubuntu4) xenial; urgency=medium
+
+  * Drop Trusty support for now.
+  * Pin python3-pkg-resources as dependency
+
+ -- Benjamin Bach <benjamin@learningequality.org>  Mon, 04 Dec 2017 15:21:43 +0100
+
+kolibri-source (0.6.0-0ubuntu3) trusty; urgency=medium
+
+  * Python3 dependency>=3.4 + fix error in /etc/default/kolibri
+
+ -- Benjamin Bach <benjamin@learningequality.org>  Sun, 03 Dec 2017 21:01:26 +0100
+
+kolibri-source (0.6.0-0ubuntu2) trusty; urgency=medium
+
+  * Adds startup service configuration
+
+ -- Benjamin Bach <benjamin@learningequality.org>  Fri, 01 Dec 2017 16:09:17 +0100
+
+kolibri-source (0.6.0-0ubuntu1) trusty; urgency=medium
+
+  * New upstream release
+
+ -- Benjamin Bach <benjamin@learningequality.org>  Thu, 30 Nov 2017 19:45:39 +0100
+
+kolibri-source (0.5.0.dev46-0ubuntu11) trusty; urgency=medium
+
+  * Further removal of python2-only code
+
+ -- Benjamin Bach <benjamin@learningequality.org>  Thu, 30 Nov 2017 17:10:58 +0100
+
+kolibri-source (0.5.0.dev46-0ubuntu10) trusty; urgency=medium
+
+  * Add in python3 setup.py install that got overwritten
+
+ -- Benjamin Bach <benjamin@learningequality.org>  Wed, 29 Nov 2017 21:18:31 +0100
+
+kolibri-source (0.5.0.dev46-0ubuntu9) trusty; urgency=medium
+
+  * Fix syntax error in config file write
+
+ -- Benjamin Bach <benjamin@learningequality.org>  Wed, 29 Nov 2017 16:30:25 +0100
+
+kolibri-source (0.5.0.dev46-0ubuntu8) trusty; urgency=medium
+
+  * Remove failing empty kolibri.install script
+
+ -- Benjamin Bach <benjamin@learningequality.org>  Wed, 29 Nov 2017 14:21:17 +0100
+
+kolibri-source (0.5.0.dev46-0ubuntu7) unreleased; urgency=medium
+
+  * Add missing build dependency
+
+ -- Benjamin Bach <benjamin@learningequality.org>  Wed, 29 Nov 2017 01:08:22 +0100
+
+kolibri-source (0.5.0.dev46-0ubuntu6) trusty; urgency=medium
+
+  * Removing call to python2 builder
+
+ -- Benjamin Bach <benjamin@learningequality.org>  Wed, 29 Nov 2017 00:30:32 +0100
+
+kolibri-source (0.5.0.dev46-0ubuntu5) trusty; urgency=medium
+
+  * Adding systemd+SysV startup service
+
+ -- Benjamin Bach <benjamin@learningequality.org>  Wed, 29 Nov 2017 00:20:16 +0100
+
+kolibri-source (0.5.0.dev46-0ubuntu4) trusty; urgency=medium
+
+  * Adding more py2-only excludes
+
+ -- Benjamin Bach <benjamin@learningequality.org>  Tue, 17 Oct 2017 00:28:11 +0200
+
+kolibri-source (0.5.0.dev46-0ubuntu3) trusty; urgency=medium
+
+  * Apply patch to remove python2 like module from dist/
+
+ -- Benjamin Bach <benjamin@learningequality.org>  Mon, 16 Oct 2017 17:49:16 +0200
+
+kolibri-source (0.5.0.dev46-0ubuntu1) trusty; urgency=medium
+
+  * Upstream dev release based on 0.5.x dev branch
+
+ -- Benjamin Bach <benjamin@learningequality.org>  Mon, 16 Oct 2017 15:32:35 +0200

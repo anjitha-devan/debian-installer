@@ -1,0 +1,8 @@
+{
+  "name": "kolibri-document-pdf-render-plugin",
+  "description": "Document/PDF Render Plugin for Kolibri",
+  "private": true,
+  "dependencies": {
+    "pdfjs-dist": "^1.8.559"
+  }
+}

@@ -1,0 +1,75 @@
+########################################################
+# Sets the environment for the Kolibri system service
+# Do not change this script!
+#
+# To configure the system service, please either
+
+# 1) Edit /etc/kolibri/daemon.conf
+# 2) Add your own scripts to /etc/kolibri/conf.d/*.conf
+#    .conf scripts are loaded in alphanumeric order
+########################################################
+
+# Set the default values
+
+if [ -f /etc/kolibri/username ]
+then
+  export KOLIBRI_USER=`cat /etc/kolibri/username`
+  if [ "$KOLIBRI_USER" = "" ]
+  then
+    export KOLIBRI_USER="kolibri"
+  fi
+else
+  export KOLIBRI_USER="kolibri"
+fi
+
+KOLIBRI_HOME="~/.kolibri"
+KOLIBRI_COMMAND="kolibri"
+DJANGO_SETTINGS_MODULE="kolibri.deployment.default.settings.base"
+
+# Load conf.d directory
+
+if [ -d /etc/kolibri/conf.d ]
+then
+  for f in /etc/kolibri/conf.d/*.conf
+  do
+    # Necessary because of empty directories
+    if [ -e "$f" ]
+    then
+      . "$f"
+    fi
+  done
+fi
+
+# Load user configuration
+
+if [ -e /etc/kolibri/daemon.conf ]
+then
+  . /etc/kolibri/daemon.conf
+fi
+
+# Finally, to ensure that they are available to subprocesses, export them
+# This has been a problem in Ubuntu 14.04 despite the use of `su -p`
+# Will be investigated in 0.8.x when setting a path relative to "~" is
+# supported.
+export KOLIBRI_USER
+export KOLIBRI_COMMAND
+export DJANGO_SETTINGS_MODULE
+export KOLIBRI_HOME
+
+# Other env vars that we don't define by default, but because of issues
+# propagating environment in Ubuntu 14.04, we are exporting them for now
+export KOLIBRI_LISTEN_PORT # This is deprecated
+export KOLIBRI_HTTP_PORT # Use this
+export KOLIBRI_DATABASE_ENGINE
+export KOLIBRI_DATABASE_NAME
+export KOLIBRI_DATABASE_PASSWORD
+export KOLIBRI_DATABASE_USER
+export KOLIBRI_DATABASE_HOST
+export KOLIBRI_DATABASE_PORT
+export KOLIBRI_CHERRYPY_THREAD_POOL
+export KOLIBRI_CHERRYPY_SOCKET_TIMEOUT
+export KOLIBRI_CHERRYPY_QUEUE_SIZE
+export KOLIBRI_CHERRYPY_QUEUE_TIMEOUT
+export KOLIBRI_CONTENT_DIR
+export KOLIBRI_CENTRAL_CONTENT_BASE_URL
+export KOLIBRI_RUN_MODE

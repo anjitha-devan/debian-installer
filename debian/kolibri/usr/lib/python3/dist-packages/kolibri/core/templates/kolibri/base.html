@@ -1,0 +1,85 @@
+{% load i18n kolibri_tags webpack_tags content_tags cache %}
+{% load staticfiles %}
+{% get_current_language_bidi as LANGUAGE_BIDI %}
+{% get_current_language as LANGUAGE_CODE %}
+<!DOCTYPE html>
+<html dir="{{ LANGUAGE_BIDI|yesno:'rtl,ltr' }}">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="google" content="notranslate">
+  <link rel="shortcut icon" href="{% static 'images/logo.ico' %}">
+  <title>{% trans "Kolibri" %}</title>
+  {% if LANGUAGE_CODE == "ach-ug" %}
+    <script type="text/javascript">
+      var _jipt = [];
+      _jipt.push(['project', 'kolibri']);
+    </script>
+    <script type="text/javascript" src="//cdn.crowdin.com/jipt/jipt.js"></script>
+  {% endif %}
+</head>
+<body>
+{% csrf_token %}
+{% if supported_browser %}
+<rootvue>
+  <style>
+    .loading-spinner-wrapper-base{
+      width: 97vw;
+      height: 97vh;
+      position: relative;
+      display: none;
+    }
+
+    .loading-spinner-base {
+      width: 125px;
+      height: 125px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: url("{% static 'images/loading-spinner.gif' %}") no-repeat center;
+      background-size: contain;
+    }
+  </style>
+  <div class="loading-spinner-wrapper-base" id="loading-spinner-wrapper-base">
+    <div class="loading-spinner-base"></div>
+  </div>
+  <script>
+    var timeoutId = window.setTimeout(showLoadingSpinner, 2500);
+    function showLoadingSpinner() {
+      var elem = document.getElementById("loading-spinner-wrapper-base");
+      if (elem) {
+        elem.style.display = 'block';
+        window.clearTimeout(timeoutId);
+      }
+    }
+  </script>
+</rootvue>
+{% block frontend_assets %}
+{% kolibri_language_globals %}
+{% webpack_asset 'default_frontend' %}
+{% kolibri_set_server_time %}
+<script type="text/javascript">
+  {% cache 5000 js_urls %}
+    {% kolibri_set_urls %}
+  {% endcache %}
+</script>
+<!-- Bootstrapping the currently logged in user's session object into the page. -->
+{% kolibri_bootstrap_model 'session' 'SessionResource' kwargs_pk='current'%}
+{% webpack_base_assets %}
+{% webpack_base_async_assets %}
+{% content_renderer_assets %}
+{% endblock %}
+
+{% block content %}
+
+{% endblock %}
+
+{% else %}
+
+{% include 'kolibri/unsupported_browser.html' %}
+
+{% endif %}
+</body>
+</html>
